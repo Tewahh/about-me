@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Money Empire</title>
+<meta name="description" content="Money Empire - A clean incremental web game.">
+
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
+</head>
+
+<body>
+
+<!-- Loading Screen -->
+<div id="loader" aria-hidden="true">
+    <div class="spinner"></div>
+</div>
+
+<!-- Background Effects -->
+<div class="gradient-bg"></div>
+<div class="floating-shapes"></div>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="logo">Money Empire</div>
+
+    <button class="nav-toggle" aria-label="Toggle Menu">☰</button>
+
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#how-to-play">How to Play</a></li>
+        <li>
+            <button id="themeToggle" aria-label="Toggle Dark Mode">🌙</button>
+        </li>
+    </ul>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+    <div class="hero-content">
+        <h1>Money Empire</h1>
+        <p>Build. Upgrade. Expand.</p>
+
+        <h2 id="moneyCounter">$0</h2>
+
+        <a href="#how-to-play" class="btn">How to Play</a>
+    </div>
+</header>
+
+<!-- About -->
+<section id="about" class="section reveal">
+    <h2>About</h2>
+    <p>
+        Money Empire is an incremental clicker game built with Java. Its ported 
+        into HTML, CSS, and JS.
+    </p>
+</section>
+
+<!-- How To Play -->
+<section id="how-to-play" class="section reveal">
+    <h2>How To Play</h2>
+    <p class="section-intro">
+        Build your empire through investing, businesses, assets, and collectibles.
+        Grow your net worth and dominate the economy.
+    </p>
+
+    <div class="guide-container">
+
+        <!-- Investing -->
+        <div class="guide-card">
+            <h3>📈 Investing</h3>
+            <p>Invest in Stocks, Real Estate, and Cryptocurrency to generate passive income and grow your wealth.</p>
+
+            <ul>
+                <li><strong>Stocks:</strong> Buy shares, earn dividends per hour, and buy out companies.</li>
+                <li><strong>Real Estate:</strong> Own properties worldwide and collect rental income.</li>
+                <li><strong>Cryptocurrency:</strong> High risk, high reward assets based on market value.</li>
+            </ul>
+        </div>
+
+        <!-- Businesses -->
+        <div class="guide-card">
+            <h3>🏢 Businesses</h3>
+            <p>Start and manage businesses to earn consistent hourly income.</p>
+            <ul>
+                <li>Maximum 20 business slots.</li>
+                <li>Each business increases passive earnings.</li>
+                <li>Higher-tier businesses generate more profit.</li>
+            </ul>
+        </div>
+
+        <!-- Earnings -->
+        <div class="guide-card">
+            <h3>💳 Earnings</h3>
+            <p>Earn money actively through the click system.</p>
+            <ul>
+                <li>Your balance is displayed on a virtual credit card.</li>
+                <li>Click to earn instant money.</li>
+                <li>Upgrade your click value to increase earnings per tap.</li>
+            </ul>
+        </div>
+
+        <!-- Items -->
+        <div class="guide-card">
+            <h3>🚗 Items & Assets</h3>
+            <p>Collect luxury transport, residence upgrades, collectibles, and islands.</p>
+            <ul>
+                <li>Garage, Hangar, Harbor for vehicles.</li>
+                <li>Residence stores gold, silver, and diamonds.</li>
+                <li>Collections increase prestige and net worth.</li>
+                <li>Buy private islands as elite assets.</li>
+            </ul>
+        </div>
+
+        <!-- Profile -->
+        <div class="guide-card">
+            <h3>👤 Profile & Statistics</h3>
+            <p>Track your complete financial empire.</p>
+            <ul>
+                <li>Total Net Worth overview.</li>
+                <li>Asset breakdown by category.</li>
+                <li>Progress tracking and ownership stats.</li>
+                <li>Detailed earnings breakdown.</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Money Empire</p>
+</footer>
+
+<!-- Analytics Ready Placeholder -->
+<script>
+    // Example:
+    // Add Google Analytics or other tracking here later.
+</script>
+
+</body>
+</html>

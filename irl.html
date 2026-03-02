@@ -1,29 +1,231 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
 <head>
-<title>Real Life Experience</title>
-<style>
-body {
-    background:#050505;
-    color:#00ff88;
-    font-family:Courier New, monospace;
-    padding:60px;
-}
-a { color:#00ff88; text-decoration:none; }
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="resume/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
+
 <body>
+    <header class="site-header">
+        <h1 class="logo">Drake Sabella</h1>
+        <nav id="navbar">
+            <ul>
+                <li><a data-section="about">About</a></li>
+                <li><a data-section="portfolio">Projects</a></li>
+                <li><a data-section="resume">Resume</a></li>
+                <div class="toggle-container">
+                    <label>
+                        <input type="checkbox" id="disable-animations">
+                        Reduce Motion
+                    </label>
+                </div>
+            </ul>
+        </nav>
+    </header>
 
-<h1>Real Life Experience</h1>
 
-<h2>Systems Architecture</h2>
-<p>Designed scalable Android game backend architecture.</p>
+    <main>
+        <section id="about-section" class="section active">
+            <h1>About Me</h1>
+            <p>
+                Motivated high school senior completing a VoTech program in Web Development with AI integration,
+                seeking part-time employment to apply technical skills while gaining real-world experience.
+            </p>
+            <h3>Education</h3>
+            <p>
+                LHS - Liberty High School<br>
+                BAVTS - Multimedia & Web Design with AI Integration
+            </p>
+        </section>
 
-<h2>Entrepreneurship</h2>
-<p>Building digital products and independent projects.</p>
+        <section id="portfolio-section" class="section">
+            <h1>My Work</h1>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h2 class="project-name">Amethyst Clicker</h2>
+                    <p class="project-description">
+                        First project that taught me how to use CDNs
+                        <br /><br /><b class="testclass">(ARCHIVED)</b>
+                    </p>
+                    <a href="Amethyst Clicker/index.htm" target="_blank" class="project-link">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h2 class="project-name">Galaxy Clicker</h2>
+                    <p class="project-description">
+                        One of my first ever projects that I still have
+                        access to.
+                        <br /><br /><b class="testclass">(ARCHIVED)</b>
+                    </p>
+                    <a href="Galaxy Clicker/index.htm" target="_blank" class="project-link">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h2 class="project-name">Gear Clicker</h2>
+                    <p class="project-description">
+                        Threw this together quite fast, and it was very
+                        rushed.
+                        <br /><br /><b class="testclass">(ARCHIVED)</b>
 
-<br><br>
-<a href="index.html">← Return to Terminal</a>
+                    </p>
+                    <a href="Gear Clicker/index.htm" target="_blank" class="project-link">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h2 class="project-name">Money Clicker</h2>
+                    <p class="project-description">
+                        First project that taugt me the basics of animations
+                        using CSS, also one of my more recent projects.
+                        <br /><br /><b class="testclass">(ARCHIVED)</b>
 
+                    </p>
+                    <a href="Money Clicker/index.htm" target="_blank" class="project-link">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h2 class="project-name">Professional Game</h2>
+                    <p class="project-description">
+                        One of my most enjoyable games that I've made so far.
+                        <br /><br /><b class="testclass">(ARCHIVED)</b>
+
+                    </p>
+                    <a href="Professional Game/index.htm" target="_blank" class="project-link">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h2 class="project-name">Quartz Clicker</h2>
+                    <p class="project-description">
+                        Rushed this game, because I had a bunch of different ideas, and i tried to implement them all at
+                        once.
+                        <br /><br /><b class="testclass">(ARCHIVED)</b>
+
+                    </p>
+                    <a href="Quartz Clicker/index.htm" target="_blank" class="project-link">View Project</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="resume-section" class="section">
+            <div class="resume-container">
+
+                <!-- Resume Header -->
+                <div class="resume-header">
+                    <h1>Drake Sabella</h1>
+                    <p class="typing"></p>
+                    <div class="resume-contact">
+                        <a href="mailto:sabellad0587@bavts.org">sabellad0587@bavts.org</a>
+                        <span>•</span>
+                        <a href="https://github.com/Tewahh" target="_blank">GitHub</a>
+                        <span>•</span>
+                        <a href="https://www.linkedin.com/in/drake-sabella-a541763a8" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="resume-body">
+
+                    <!-- LEFT COLUMN -->
+                    <div class="resume-left">
+
+                        <div class="resume-block">
+                            <h2>Objective</h2>
+                            <p>
+                                Motivated high school senior in a Web Development VoTech program with AI integration,
+                                seeking part-time employment to apply technical skills while gaining professional
+                                experience.
+                            </p>
+                        </div>
+
+                        <div class="resume-block timeline">
+                            <h2>Education</h2>
+
+                            <div class="timeline-item">
+                                <h3>Liberty High School</h3>
+                                <span>Expected Graduation: June 2026</span>
+                            </div>
+
+                            <div class="timeline-item">
+                                <h3>Bethlehem Area Vocational-Technical School</h3>
+                                <span>Multimedia & Web Design with AI Integration (2026)</span>
+                            </div>
+                        </div>
+
+                        <div class="resume-block timeline">
+                            <h2>Volunteer Experience</h2>
+
+                            <div class="timeline-item">
+                                <h3>Cinema Attendant</h3>
+                                <span>Steel Stacks Frank Banko Alehouse Cinema | Sept 2025 - Nov 2025</span>
+                                <ul>
+                                    <li>Assisted daily operations and supported team members</li>
+                                    <li>Maintained organized and safe environment</li>
+                                    <li>Demonstrated punctuality and communication skills</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT COLUMN -->
+                    <div class="resume-right">
+
+                        <div class="resume-block">
+                            <h2>Technical Skills</h2>
+                            <div class="skill">
+                                <span>HTML & CSS</span>
+                                <div class="skill-bar">
+                                    <div style="width:85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill">
+                                <span>JavaScript</span>
+                                <div class="skill-bar">
+                                    <div style="width:70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill">
+                                <span>Java</span>
+                                <div class="skill-bar">
+                                    <div style="width:25%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="resume-block">
+                            <h2>Certifications</h2>
+                            <ul>
+                                <li>OSHA 10 Certified (2023)</li>
+                                <li>CPR Certified (2025)</li>
+                                <li>CodeHS Web Design Level 1 (2025)</li>
+                            </ul>
+                        </div>
+
+                        <div class="resume-block">
+                            <h2>Career Interests</h2>
+                            <ul>
+                                <li>Software Development</li>
+                                <li>Application Development</li>
+                                <li>Systems Analysis</li>
+                                <li>Computer Programming</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 Drake Sabella • Programmer
+    </footer>
+
+
+    <script src="resume/script.js"></script>
 </body>
+
 </html>

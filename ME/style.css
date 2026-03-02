@@ -1,0 +1,309 @@
+:root {
+    --bg: #ffffff;
+    --text: #111827;
+    --accent: #2563eb;
+    --card: #f3f4f6;
+}
+
+[data-theme="dark"] {
+    --bg: #0f172a;
+    --text: #f1f5f9;
+    --accent: #3b82f6;
+    --card: #1e293b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s ease;
+    overflow-x: hidden;
+}
+
+/* Loader */
+#loader {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #ccc;
+    border-top: 4px solid var(--accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.8);
+    z-index: 1000;
+}
+
+[data-theme="dark"] .navbar {
+    background: rgba(15,23,42,0.8);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a,
+#themeToggle {
+    text-decoration: none;
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#moneyCounter {
+    margin: 20px 0;
+    color: var(--accent);
+}
+
+/* Sections */
+.section {
+    padding: 120px 20px;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--accent);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+/* Demo */
+.demo-container {
+    height: 500px;
+    margin-top: 40px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mouse Gradient */
+.gradient-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at center, rgba(37,99,235,0.15), transparent 40%);
+}
+
+/* Floating Shapes */
+.floating-shapes::before,
+.floating-shapes::after {
+    content: "";
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    background: var(--accent);
+    opacity: 0.05;
+    border-radius: 50%;
+    animation: float 8s infinite alternate ease-in-out;
+}
+
+.floating-shapes::after {
+    top: 70%;
+    left: 75%;
+}
+
+@keyframes float {
+    to { transform: translateY(-40px); }
+}
+
+/* Mobile */
+@media(max-width:768px){
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: var(--bg);
+        flex-direction: column;
+        padding: 20px;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+/* section for how to play */
+.section-intro {
+    margin: 20px auto 50px;
+    max-width: 600px;
+    opacity: 0.8;
+}
+
+.guide-container {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.guide-card {
+    background: var(--card);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: left;
+    position: relative;
+    transition: 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+[data-theme="dark"] .guide-card {
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.guide-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--accent);
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.7rem;
+    border-radius: 50px;
+}
+.stats-row {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.stat {
+    text-align: center;
+}
+
+.counter {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.toggle-btn {
+    margin-top: 10px;
+    background: none;
+    border: none;
+    color: var(--accent);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+
+.guide-card.active .dropdown-content {
+    max-height: 400px;
+    margin-top: 15px;
+}
+
+.mini-demo {
+    margin-top: 15px;
+}
+
+.mini-demo button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    background: var(--accent);
+    color: white;
+    cursor: pointer;
+}
+
+.guide-card h3 {
+    margin-bottom: 15px;
+    color: var(--accent);
+}
+
+.guide-card ul {
+    margin-top: 15px;
+    padding-left: 18px;
+}
+
+.guide-card li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
