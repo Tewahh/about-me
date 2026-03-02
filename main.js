@@ -34,10 +34,10 @@ const terminal = document.getElementById("terminal");
 
 const routes = {
   help: "Commands: about, resume, games, irl, clear",
-  about: "about.html",
-  resume: "resume.html",
-  games: "games.html",
-  irl: "irl.html"
+  about: "pages/about/about.html",
+  resume: "pages/resume/resume.html",
+  games: "pages/games/games.html",
+  irl: "pages/irl/irl.html"
 };
 
 input.addEventListener("keydown", function (e) {
