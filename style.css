@@ -1,168 +1,72 @@
-/* =========================
-   ROOT + THEME
-========================= */
-
 :root {
-	--bg1: #0f2027;
-	--bg2: #203a43;
-	--bg3: #2c5364;
-	--text: #ffffff;
-	--card-bg: rgba(255, 255, 255, 0.08);
-	--border: rgba(255, 255, 255, 0.2);
-}
-
-body.light {
-	--bg1: #fcfeff;
-	--bg2: #e9ecf2;
-	--bg3: #dfe6f1;
-	--text: #111;
-	--card-bg: rgba(255, 255, 255, 0.6);
-	--border: rgba(0, 0, 0, 0.1);
+	--bg: #050505;
+	--green: #00ff88;
+	--soft: #00cc66;
+	--text: #baffd6;
 }
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	scroll-behavior: smooth;
+	font-family: "Courier New", monospace;
 }
 
 body {
-	font-family: 'Inter', sans-serif;
-	color: var(--text);
-	min-height: 100vh;
-	background: linear-gradient(-45deg, var(--bg1), var(--bg2), var(--bg3));
-	background-size: 400% 400%;
-	animation: gradientMove 15s ease infinite;
-	padding: 4rem 1.5rem;
+	background: var(--bg);
+	color: var(--green);
+	overflow: hidden;
 }
 
-@keyframes gradientMove {
-	0% {
-		background-position: 0% 50%;
-	}
-
-	50% {
-		background-position: 100% 50%;
-	}
-
-	100% {
-		background-position: 0% 50%;
-	}
+/* Particles canvas */
+canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
 }
 
-/* =========================
-   LAYOUT
-========================= */
+.hero {
+	text-align: center;
+	padding: 100px 20px 40px;
+}
 
-.container {
+.hero h1 {
+	font-size: 48px;
+}
+
+.section {
 	max-width: 900px;
 	margin: auto;
+	padding: 20px;
 }
-
-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 4rem;
-}
-
-.toggle {
-	cursor: pointer;
-	background: var(--card-bg);
-	backdrop-filter: blur(15px);
-	border: 1px solid var(--border);
-	padding: 0.5rem 1rem;
-	border-radius: 30px;
-}
-
-/* =========================
-   TERMINAL HERO
-========================= */
 
 .terminal {
-	background: #111;
-	padding: 2rem;
-	border-radius: 15px;
-	font-family: 'Fira Code', monospace;
-	margin-bottom: 4rem;
+	background: black;
+	border: 1px solid var(--green);
+	padding: 20px;
+	border-radius: 10px;
+	height: 350px;
+	overflow-y: auto;
 }
 
-.terminal span {
-	color: #00ff88;
+.line {
+	margin-bottom: 5px;
 }
 
-/* =========================
-   GLASS CARDS
-========================= */
-
-.grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-	gap: 2rem;
-}
-
-.card {
-	padding: 2rem;
-	border-radius: 20px;
-	backdrop-filter: blur(15px);
-	background: var(--card-bg);
-	border: 1px solid var(--border);
-	transition: 0.4s ease;
-	opacity: 0;
-	transform: translateY(40px);
-}
-
-.card.visible {
-	opacity: 1;
-	transform: translateY(0);
-}
-
-.card:hover {
-	transform: translateY(-8px);
-}
-
-.card h3 {
-	margin-bottom: 1rem;
-}
-
-/* =========================
-   ICONS
-========================= */
-
-.icons {
+.input-line {
 	display: flex;
-	gap: 1.5rem;
-	margin-top: 2rem;
 }
 
-.icons a {
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	background: var(--card-bg);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border: 1px solid var(--border);
-	transition: 0.3s;
+.prompt {
+	margin-right: 5px;
 }
 
-.icons a:hover {
-	transform: translateY(-6px);
-}
-
-.icons svg {
-	width: 22px;
-	fill: var(--text);
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-	text-align: center;
-	margin-top: 5rem;
-	opacity: 0.6;
+input {
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--green);
+	width: 100%;
+	font-family: inherit;
 }
