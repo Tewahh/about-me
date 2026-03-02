@@ -138,158 +138,77 @@
         <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     </body>
 </html> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Drake Sabella | Founder</title>
+<title>DrakeOS</title>
 
 <style>
 :root {
     --bg: #050505;
-    --card: rgba(0, 255, 100, 0.05);
     --green: #00ff88;
-    --green-soft: #00cc66;
+    --soft: #00cc66;
     --text: #baffd6;
-    --glass: rgba(0,255,136,0.05);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Courier New", monospace;
-}
+* { margin:0; padding:0; box-sizing:border-box; font-family: "Courier New", monospace; }
 
 body {
     background: var(--bg);
     color: var(--green);
-    overflow-x: hidden;
+    overflow:hidden;
 }
 
-/* Animated Gradient Background */
-body::before {
-    content: "";
-    position: fixed;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at 30% 30%, #003311, transparent),
-                radial-gradient(circle at 70% 70%, #001a0d, transparent);
-    animation: moveBg 20s linear infinite;
-    z-index: -2;
-}
-
-@keyframes moveBg {
-    0% { transform: translate(0,0); }
-    50% { transform: translate(-25%, -25%); }
-    100% { transform: translate(0,0); }
-}
-
-/* Particle Canvas */
+/* Particles canvas */
 canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
 }
 
-/* Hero */
 .hero {
-    text-align: center;
-    padding: 120px 20px;
+    text-align:center;
+    padding:100px 20px 40px;
 }
 
 .hero h1 {
-    font-size: 48px;
-    color: var(--green);
+    font-size:48px;
 }
 
-.hero p {
-    margin-top: 15px;
-    font-size: 18px;
-    color: var(--text);
-}
-
-/* Cards */
 .section {
-    max-width: 1000px;
-    margin: auto;
-    padding: 60px 20px;
+    max-width:900px;
+    margin:auto;
+    padding:20px;
 }
 
-.card {
-    background: var(--glass);
-    border: 1px solid var(--green-soft);
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.6s ease;
-}
-
-.card.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.card h2 {
-    margin-bottom: 15px;
-}
-
-/* Terminal */
 .terminal {
-    background: #000;
-    border: 1px solid var(--green);
-    padding: 20px;
-    border-radius: 10px;
-    height: 350px;
-    overflow-y: auto;
+    background:black;
+    border:1px solid var(--green);
+    padding:20px;
+    border-radius:10px;
+    height:350px;
+    overflow-y:auto;
 }
 
-.line {
-    margin-bottom: 5px;
-}
+.line { margin-bottom:5px; }
 
 .input-line {
-    display: flex;
+    display:flex;
 }
 
-.prompt {
-    margin-right: 5px;
-}
+.prompt { margin-right:5px; }
 
 input {
-    background: transparent;
-    border: none;
-    outline: none;
-    color: var(--green);
-    width: 100%;
-    font-family: inherit;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 40px;
-    font-size: 14px;
-    color: var(--text);
-}
-
-button {
-    background: transparent;
-    border: 1px solid var(--green);
-    color: var(--green);
-    padding: 10px 20px;
-    margin-top: 15px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: var(--green);
-    color: black;
+    background:transparent;
+    border:none;
+    outline:none;
+    color:var(--green);
+    width:100%;
+    font-family:inherit;
 }
 </style>
 </head>
@@ -299,144 +218,93 @@ button:hover {
 <canvas id="particles"></canvas>
 
 <div class="hero">
-    <h1 id="typing"></h1>
-    <p>Founder • Builder • Systems Architect</p>
+    <h1>DrakeOS</h1>
+    <p>Type <b>help</b> to navigate</p>
 </div>
 
 <div class="section">
+    <div class="terminal" id="terminal">
+        <div class="line">Booting DrakeOS v2.0...</div>
+        <div class="line">System Ready.</div>
 
-    <div class="card">
-        <h2>🚀 MoneyEmpire</h2>
-        <p>Android economic simulation game built with scalable clean architecture.</p>
-    </div>
-
-    <div class="card">
-        <h2>🧠 System Design</h2>
-        <p>Domain-driven architecture, repositories, market engines, and reactive UI systems.</p>
-    </div>
-
-    <div class="card">
-        <h2>💻 Interactive Terminal</h2>
-        <div class="terminal" id="terminal">
-            <div class="line">Booting DrakeOS v1.0...</div>
-            <div class="line">Type <b>help</b> to begin.</div>
-            <div class="input-line">
-                <span class="prompt">$</span>
-                <input type="text" id="terminalInput" autofocus>
-            </div>
+        <div class="input-line">
+            <span class="prompt">$</span>
+            <input type="text" id="terminalInput" autofocus>
         </div>
     </div>
-
 </div>
 
-<footer>
-© 2026 Drake Sabella — Built Different.
-</footer>
-
 <script>
-
-/* =======================
-   TYPING EFFECT
-======================= */
-const text = "Drake Sabella";
-let i = 0;
-function typeEffect() {
-    if (i < text.length) {
-        document.getElementById("typing").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeEffect, 100);
-    }
-}
-typeEffect();
-
-/* =======================
-   SCROLL ANIMATION
-======================= */
-const cards = document.querySelectorAll(".card");
-window.addEventListener("scroll", () => {
-    cards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-            card.classList.add("show");
-        }
-    });
-});
-
-/* =======================
-   PARTICLES
-======================= */
+/* PARTICLES */
 const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let particles = [];
-for (let i = 0; i < 80; i++) {
+for (let i=0;i<80;i++){
     particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 2,
-        d: Math.random() * 1
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        r:Math.random()*2,
+        d:Math.random()*1
     });
 }
 
-function drawParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "#00ff88";
-    particles.forEach(p => {
+function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle="#00ff88";
+    particles.forEach(p=>{
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
         ctx.fill();
-        p.y += p.d;
-        if (p.y > canvas.height) p.y = 0;
+        p.y+=p.d;
+        if(p.y>canvas.height)p.y=0;
     });
-    requestAnimationFrame(drawParticles);
+    requestAnimationFrame(animate);
 }
-drawParticles();
+animate();
 
-/* =======================
-   TERMINAL SYSTEM
-======================= */
+/* TERMINAL ROUTING */
 const input = document.getElementById("terminalInput");
 const terminal = document.getElementById("terminal");
 
-const commands = {
-    help: "Available commands: about, projects, contact, clear",
-    about: "Founder building scalable systems and economic simulations.",
-    projects: "MoneyEmpire - Android game | Custom engine architecture.",
-    contact: "Email: drake@example.com",
-    clear: ""
+const routes = {
+    help: "Commands: about, resume, games, irl, clear",
+    about: "about.html",
+    resume: "resume.html",
+    games: "games.html",
+    irl: "irl.html"
 };
 
-input.addEventListener("keydown", function(e) {
-    if (e.key === "Enter") {
-        const value = input.value.trim();
-        const line = document.createElement("div");
-        line.className = "line";
-        line.textContent = "$ " + value;
-        terminal.insertBefore(line, input.parentElement);
+input.addEventListener("keydown", function(e){
+    if(e.key==="Enter"){
+        const value=input.value.trim().toLowerCase();
 
-        if (value === "clear") {
-            terminal.innerHTML = `
-                <div class="line">Terminal cleared.</div>
-                <div class="input-line">
-                    <span class="prompt">$</span>
-                    <input type="text" id="terminalInput" autofocus>
-                </div>
-            `;
+        const line=document.createElement("div");
+        line.className="line";
+        line.textContent="$ "+value;
+        terminal.insertBefore(line,input.parentElement);
+
+        if(value==="clear"){
             location.reload();
-        } else {
-            const response = document.createElement("div");
-            response.className = "line";
-            response.textContent = commands[value] || "Command not found.";
-            terminal.insertBefore(response, input.parentElement);
+            return;
         }
 
-        input.value = "";
-        terminal.scrollTop = terminal.scrollHeight;
+        if(routes[value] && routes[value].endsWith(".html")){
+            window.location.href=routes[value];
+            return;
+        }
+
+        const response=document.createElement("div");
+        response.className="line";
+        response.textContent=routes[value]||"Command not found.";
+        terminal.insertBefore(response,input.parentElement);
+
+        input.value="";
+        terminal.scrollTop=terminal.scrollHeight;
     }
 });
-
 </script>
 
 </body>
