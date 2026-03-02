@@ -477,3 +477,8 @@ strong {
 .reduce-motion .typing::after {
     animation: none !important;
 }
+
+.return-terminal {
+    color: #00ff88;
+    text-decoration: none;
+}

@@ -35,7 +35,7 @@ const terminal = document.getElementById("terminal");
 const routes = {
   help: "Commands: about, resume, games, irl, clear",
   about: "pages/about/about.html",
-  resume: "pages/resume/resume.html",
+  resume: "resume.html",
   games: "pages/games/games.html",
   irl: "pages/irl/irl.html"
 };
