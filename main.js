@@ -52,7 +52,7 @@ let historyIndex = -1;
 /* ================= PERSISTENT FILE SYSTEM ================= */
 
 let fs = JSON.parse(localStorage.getItem("drakeFS")) || {
-  "/": ["about.html","resume.html","games"],
+  "/": ["pages/about/about.html","pages/irl/irl.html","pages/games/games.html"],
   "/games": ["snake"]
 };
 
