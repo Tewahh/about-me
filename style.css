@@ -157,3 +157,18 @@ input {
 	color: #00ff88;
 	text-decoration: none;
 }
+
+.line {
+  font-family: monospace;
+  margin: 4px 0;
+}
+
+.command {
+  color: #00ff88;
+  transition: 0.2s;
+}
+
+.command:hover {
+  color: white;
+  text-shadow: 0 0 6px #00ff88;
+}
