@@ -4,63 +4,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DrakeOS</title>
+    <title>Drake Sabella | Hire Me</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40" display="none" width="0" height="0">
-        <symbol id="icon-3b7eeeccbb457780f277fce4669f67a0" viewBox="0 0 40 40">
-            <path d="M33.2,8.3c-2.5-1.1-5.1-1.9-7.9-2.4c-0.3,0.6-0.7,1.4-1,2c-2.9-0.4-5.8-0.4-8.7,0c-0.3-0.6-0.7-1.4-1-2 c-2.8,0.5-5.4,1.3-7.9,2.4c-5,7.2-6.3,14.2-5.6,21.1c3.3,2.3,6.5,3.8,9.6,4.7c0.8-1,1.5-2.1,2.1-3.3c-1.1-0.4-2.2-0.9-3.2-1.5 c0.3-0.2,0.5-0.4,0.8-0.6c6.3,2.8,13,2.8,19.2,0c0.3,0.2,0.5,0.4,0.8,0.6c-1,0.6-2.1,1.1-3.2,1.5c0.6,1.1,1.3,2.2,2.1,3.3 c3.1-0.9,6.3-2.4,9.6-4.7C39.7,21.4,37.5,14.4,33.2,8.3z M13.7,25.1c-1.9,0-3.4-1.7-3.4-3.7s1.5-3.7,3.4-3.7c1.9,0,3.5,1.7,3.4,3.7 C17.1,23.4,15.6,25.1,13.7,25.1z M26.3,25.1c-1.9,0-3.4-1.7-3.4-3.7s1.5-3.7,3.4-3.7c1.9,0,3.5,1.7,3.4,3.7 C29.7,23.4,28.2,25.1,26.3,25.1z"/>
-        </symbol>
-        <symbol id="icon-c3c8e1063e3b7f84f6b54712741de139" viewBox="0 0 40 40">
-            <path d="M37.5,12.6l-17.5,11.9L2.5,12.6c-.2-.1-.3-.2-.5-.2v-2.7c0-.8.6-1.4,1.4-1.4h33.1c.8,0,1.4.6,1.4,1.4v2.7c-.2,0-.4,0-.5.2ZM19.5,26.3c.2.1.3.2.5.2s.4,0,.5-.2l17.5-11.9v16.9c0,.8-.6,1.4-1.4,1.4H3.4c-.8,0-1.4-.6-1.4-1.4V14.4l17.5,11.9Z" />
-        </symbol>
-        <symbol id="icon-609167072cf835e4e0e39f79e5fecfbf" viewBox="0 0 40 40">
-            <path d="M24.5,13.6V5.8c0.2,0.2,0.4,0.3,0.6,0.5l6.8,6.8c0.2,0.2,0.3,0.4,0.5,0.6L24.5,13.6L24.5,13.6z M22.3,14.2 c0,0.4,0.2,0.8,0.5,1.1c0.3,0.3,0.7,0.5,1.1,0.5h9v17.5c0,0.4-0.2,0.8-0.5,1.1c-0.3,0.3-0.7,0.5-1.1,0.5H9.1c-0.4,0-0.8-0.2-1.1-0.5 c-0.3-0.3-0.5-0.7-0.5-1.1V6.7c0-0.4,0.2-0.8,0.5-1.1c0.3-0.3,0.7-0.5,1.1-0.5h13.3L22.3,14.2L22.3,14.2z"/>
-        </symbol>
-    </svg>
-    <canvas id="particles"></canvas>
+
+    <header>
+        <h3>Drake</h3>
+        <nav>
+            <a onclick="scrollToSection('projects')">Projects</a>
+            <a onclick="scrollToSection('services')">Services</a>
+            <a onclick="scrollToSection('pricing')">Pricing</a>
+            <a onclick="scrollToSection('contact')">Contact</a>
+        </nav>
+    </header>
 
     <div class="hero">
-        <h1>DrakeOS</h1>
-        <p>Type <b>help</b> to navigate</p>
+        <h1>Drake Sabella</h1>
+        <p>I build websites, Discord bots, and custom systems for clients.</p>
+
+        <div class="buttons">
+            <div class="btn" onclick="scrollToSection('projects')">View Work</div>
+            <div class="btn" onclick="openTerminal()">Launch DrakeOS</div>
+            <div class="btn" onclick="scrollToSection('pricing')">Hire Me</div>
+        </div>
     </div>
 
-    <div class="section">
-        <div class="terminal" id="terminal">
-            <div class="line">Booting DrakeOS v2.0...</div>
-            <div class="line">System Ready.</div>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="grid">
 
-            <div class="input-line">
-                <span class="prompt">$</span>
-                <input type="text" id="terminalInput" autofocus>
+            <div class="card">
+                <h3>Discord Queue Bot</h3>
+                <p>Automated queue + ticket system used for managing testers and users.</p>
+                <p class="price">Built for scalability</p>
             </div>
+
+            <div class="card">
+                <h3>DrakeOS</h3>
+                <p>Browser-based operating system with commands, games, and UI system.</p>
+                <p class="price">Custom JS system</p>
+            </div>
+
+            <div class="card">
+                <h3>Portfolio System</h3>
+                <p>Modern animated resume site with clean UI and performance focus.</p>
+                <p class="price">Responsive design</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Services</h2>
+        <div class="grid">
+
+            <div class="card">
+                <h3>Web Development</h3>
+                <p>Clean, fast, modern websites.</p>
+            </div>
+
+            <div class="card">
+                <h3>Discord Bots</h3>
+                <p>Queues, tickets, moderation, automation.</p>
+            </div>
+
+            <div class="card">
+                <h3>Custom Systems</h3>
+                <p>Dashboards, tools, and interactive apps.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="pricing">
+        <h2>Pricing (Fiverr Ready)</h2>
+        <div class="grid">
+
+            <div class="card">
+                <h3>Basic</h3>
+                <p>Simple website or bot</p>
+                <p class="price">$25 - $50</p>
+            </div>
+
+            <div class="card">
+                <h3>Standard</h3>
+                <p>Advanced features + UI</p>
+                <p class="price">$75 - $150</p>
+            </div>
+
+            <div class="card">
+                <h3>Premium</h3>
+                <p>Full custom system</p>
+                <p class="price">$200+</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Phone Number: (123)-456-7890</p>
+        <p><a href="mailto:drakesabella@gmail.com" target="_blank">drakesabella@gmail.com</a> | <a href="mailto:realtewahh@gmail.com" target="_blank">realtewahh@gmail.com</a></p>
+        <p><a href="https://discord.com/users/993185516474351616" target="_blank">Discord: Tewahh</a></p>
+        <p><a href="https://github.com/Tewahh" target="_blank">GitHub</a></p>
+        <p><a href="https://www.linkedin.com/in/drake-sabella-a541763a8" target="_blank">LinkedIn</a></p>
+    </section>
+
+    <footer>
+        © 2026 Drake Sabella • A vailable for Work
+    </footer>
+
+    <!-- TERMINAL OS -->
+    <div id="terminalModal">
+        <div class="window-bar">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
         </div>
 
-        <ul id="icons01" class="icons-component instance-1 style-1">
-            <li>
-                <a class="n01" href="https://discord.com/users/993185516474351616" target="_blank" role="button">
-                    <svg aria-labelledby="icons01-icon-1-title">
-                        <title id="icons01-icon-1-title">Discord</title>
-                        <use href="#icon-3b7eeeccbb457780f277fce4669f67a0"></use>
-                    </svg>
-                    <span class="label">Discord</span>
-                </a>
-            </li>
-            <li>
-                <a class="n02" href="mailto:realtewahh@gmail.com" target="_blank" role="button">
-                    <svg aria-labelledby="icons01-icon-2-title">
-                        <title id="icons01-icon-2-title">Email</title>
-                        <use href="#icon-c3c8e1063e3b7f84f6b54712741de139"></use>
-                    </svg>
-                    <span class="label">Email</span>
-                </a>
-            </li>
-        </ul>
+        <div id="terminal"></div>
+        <input id="input" placeholder="type help...">
     </div>
-    <script src="main.js"></script>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
+    <script text="text/javascript" src="main.js"></script>
 
 </body>
 

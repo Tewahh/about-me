@@ -1,174 +1,154 @@
 :root {
 	--bg: #050505;
-	--green: #00ff88;
-	--soft: #00cc66;
-	--text: #baffd6;
-	--white: #ffffff;
+	--primary: #00ff88;
+	--text: #d6ffe9;
+	--card: #0b0f0b;
 }
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: "Courier New", monospace;
+	font-family: "JetBrains Mono", monospace
 }
 
 body {
 	background: var(--bg);
-	color: var(--green);
-	overflow: hidden;
+	color: var(--text)
 }
 
-.icons-component {
+header {
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: var(--flex-alignment);
-	letter-spacing: 0;
-	padding: 0;
+	justify-content: space-between;
+	padding: 20px 40px;
+	border-bottom: 1px solid var(--primary)
 }
 
-.icons-component>li {
-	position: relative;
-	z-index: 1;
-}
-
-.icons-component>li>a {
-	align-items: center;
-	display: flex;
-	justify-content: center;
-}
-
-.icons-component>li>a>svg {
-	display: block;
-	pointer-events: none;
-	position: relative;
-}
-
-.icons-component>li>a+svg {
-	display: block;
-	height: 100%;
-	left: 0;
-	pointer-events: none;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	z-index: -1;
-}
-
-.icons-component>li>a>.label {
-	display: none;
-}
-
-.icons-component.style-1 {
-	font-size: 1.375em;
-	gap: 1.5rem;
-}
-
-.icons-component.style-1:not(:first-child) {
-	margin-top: 2.25rem !important;
-}
-
-.icons-component.style-1:not(:last-child) {
-	margin-bottom: 2.25rem !important;
-}
-
-.icons-component.style-1>li>a {
-	border-radius: 100%;
-	height: 2em;
-	width: 2em;
-	background-color: #FFFFFF;
-	box-shadow: 0rem 0.5rem 0.75rem 0rem rgba(122, 122, 122, 0.059);
-	transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
-}
-
-.icons-component.style-1>li>a>svg {
-	height: 60%;
-	width: 60%;
-	fill: #229FE6;
-	transition: fill 0.25s ease;
-}
-
-.icons-component.style-1>li>a+svg {
-	transition: transform 0.25s ease, fill 0.25s ease, stroke 0.25s ease;
-}
-
-.icons-component.style-1>li>a:hover {
-	transform: translateY(-11.25%);
-}
-
-.icons-component.style-1>li>a:hover+svg {
-	transform: translateY(-11.25%);
-}
-
-/* Particles canvas */
-canvas {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: -1;
+nav a {
+	margin-left: 20px;
+	cursor: pointer
 }
 
 .hero {
 	text-align: center;
-	padding: 100px 20px 40px;
+	padding: 100px 20px
 }
 
 .hero h1 {
-	font-size: 48px;
+	font-size: 3rem;
+	color: var(--primary)
 }
 
-.section {
-	max-width: 900px;
+.hero p {
+	margin-top: 10px;
+	color: #aaa
+}
+
+.buttons {
+	margin-top: 25px
+}
+
+.btn {
+	display: inline-block;
+	padding: 12px 22px;
+	border: 1px solid var(--primary);
+	margin: 10px;
+	cursor: pointer;
+	transition: .3s
+}
+
+.btn:hover {
+	background: var(--primary);
+	color: black
+}
+
+section {
+	max-width: 1100px;
 	margin: auto;
-	padding: 20px;
+	padding: 60px 20px
 }
 
-.terminal {
-	background: black;
-	border: 1px solid var(--green);
+h2 {
+	color: var(--primary);
+	margin-bottom: 20px
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 20px
+}
+
+.card {
+	background: var(--card);
+	border: 1px solid var(--primary);
 	padding: 20px;
 	border-radius: 10px;
-	height: 350px;
-	overflow-y: auto;
+	transition: .3s
 }
 
-.line {
-	margin-bottom: 5px;
+.card:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 0 20px rgba(0, 255, 136, .2)
 }
 
-.input-line {
-	display: flex;
-}
-
-.prompt {
-	margin-right: 5px;
-}
-
-input {
-	background: transparent;
-	border: none;
-	outline: none;
-	color: var(--green);
-	width: 100%;
-	font-family: inherit;
-}
-
-.return-terminal {
+.price {
 	color: #00ff88;
-	text-decoration: none;
+	font-size: 1.2rem;
+	margin-top: 10px
 }
 
-.line {
-  font-family: monospace;
-  margin: 4px 0;
+footer {
+	text-align: center;
+	padding: 30px;
+	border-top: 1px solid var(--primary)
 }
 
-.command {
-  color: #00ff88;
-  transition: 0.2s;
+/* TERMINAL FULL OS */
+#terminalModal {
+	position: fixed;
+	inset: 0;
+	background: black;
+	display: none;
+	flex-direction: column;
+	padding: 20px
 }
 
-.command:hover {
-  color: white;
-  text-shadow: 0 0 6px #00ff88;
+#terminal {
+	flex: 1;
+	overflow: auto;
+	border: 1px solid var(--primary);
+	padding: 15px
+}
+
+#input {
+	background: none;
+	border: none;
+	color: var(--primary);
+	outline: none;
+	width: 100%
+}
+
+.window-bar {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 10px
+}
+
+.dot {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%
+}
+
+.red {
+	background: red
+}
+
+.yellow {
+	background: gold
+}
+
+.green {
+	background: lime
 }
